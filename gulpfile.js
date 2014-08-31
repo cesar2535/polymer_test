@@ -8,10 +8,17 @@ var jade = require('gulp-jade');
 
 gulp.task('jade', function() {
   var YOUR_LOCALS = {};
-  gulp.src('./src/**/*.jade')
+  return gulp.src('./src/**/*.jade')
     .pipe(jade({
       locals: YOUR_LOCALS,
       pretty: true
     }))
     .pipe(gulp.dest('./build'));
 });
+
+gulp.task('components', function() {
+  return gulp.src('./bower_components/**', {base: './'})
+    .pipe(gulp.dest('./build'));
+});
+
+gulp.task('compile',['components', 'jade']);
