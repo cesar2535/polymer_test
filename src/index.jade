@@ -4,4 +4,9 @@ html
     script(src="bower_components/platform/platform.js")
   body
     link(rel="import", href="bower_components/google-map/google-map.html")
+    style.
+      google-map {
+        display: block;
+        height: 600px;
+      }
     google-map(latitude='22.605153', longitude='120.301125', disableDefaultUI, showCenterMarker, zoom='18')
