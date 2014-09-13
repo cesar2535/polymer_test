@@ -2,11 +2,25 @@ doctype html
 html
   head
     script(src="bower_components/platform/platform.js")
+    style.
+      .colored {
+        background: #4285f4;
+        color: #fff;
+      }
+      .colored:hover {
+        background: #2a56c6;
+      }
+      .colored::shadow #ripple {
+        color: red;
+      }
   body
     link(rel="import", href="bower_components/google-map/google-map.html")
-    style.
-      google-map {
-        display: block;
-        height: 600px;
-      }
-    google-map(latitude='22.605153', longitude='120.301125', disableDefaultUI, showCenterMarker, zoom='18')
+    link(rel='import', href='bower_components/paper-button/paper-button.html')
+    //- style.
+    //-   google-map {
+    //-     display: block;
+    //-     height: 600px;
+    //-   }
+    //- google-map(latitude='22.605153', longitude='120.301125', disableDefaultUI, showCenterMarker, zoom='18')
+    paper-button.colored(label='flat button')
+    paper-button.colored(label='raised button', raisedButton='')
